@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Table</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+.box {
+  background-color: lightblue;
+}
+</style>
+</head>
+<body>
+
+<div id="message"></div>
+
+<script>
+const names = ["Alice", "Bob", "Charlie", "David", "Eve"];
+const table = document.createElement('table');
+table.id = 'html'; // Give the table an ID
+const messageDiv = document.getElementById('message');
+
+function build() {
+  let html = '';
+  for (let i = 0; i < names.length; i++) {
+    html += `<tr data-row="${i}" data-name="${names[i]}" onclick="getData(this)">`;
+    html += `<td>${i}</td>`;
+    html += `<td class="box">${names[i]}</td>`; 
+    html += `</tr>`;
+  }
+  table.innerHTML = html;
+  document.body.appendChild(table);
+}
+
+function getData(element) {
+  const row = element.getAttribute('data-row');
+  const name = element.getAttribute('data-name');
+  messageDiv.textContent = `Row: ${row}, Name: ${name}`;
+}
+
+build();
+</script>
+
+</body>
+</html>
