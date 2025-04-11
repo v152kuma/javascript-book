@@ -58,7 +58,18 @@ function extract(arr) {
 
 extract(arr1);
 
+const person = {
+    
+    name: 'John Doe',
+    age: 30,
+    occupation: 'Software Engineer',
+    hobby: 'Coding'
 
+
+}
+
+const {name} = person;
+console.log(name);
 
 
 
