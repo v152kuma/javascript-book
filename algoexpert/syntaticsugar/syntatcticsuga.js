@@ -40,6 +40,24 @@ set.forEach(value => {
     console.log(value);
 }); 
 
+const arr1 = [5, 6, 7, 8];
+
+const [first, second, third, fourth] = arr;
+
+console.log(first, second, third, fourth);
+
+const arr2 = [9, 10, 11, 12];
+
+function extract(arr) {
+    
+    var [first, ...rest] = arr;
+
+    console.log(first, rest);
+
+}
+
+extract(arr1);
+
 
 
 
