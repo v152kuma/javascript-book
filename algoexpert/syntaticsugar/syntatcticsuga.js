@@ -71,5 +71,8 @@ const person = {
 const {name} = person;
 console.log(name);
 
+const {name: firstName, ...rest} = person;
+console.log(firstName, rest);
+
 
 
