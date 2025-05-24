@@ -32,14 +32,13 @@
 
 ## SPA Routes
 
-### User Routes
-- `/`: List of all users (always reachable).
-- `/:uid/places`: List of places for a selected user (always reachable).
-- `/authenticate`: Signup and login forms (only for unauthenticated users).
+### Public Routes
+- `/`: Home page displaying a list of users.
+- `/:uid/places`: Displays a list of places for the selected user.
 
-### Place Routes
-- `/places/new`: Form to create a new place (only for authenticated users).
-- `/places/:pid`: Form to update an existing place (only for authenticated users).
-- `/places/:pid/details`: View details of a specific place (always reachable).
-- `/places/search`: Search for places by title or location (always reachable).
-- `/places/map`: View all places on a map (always reachable).
+### Authentication Routes
+- `/authenticate`: Signup and login forms (accessible only to unauthenticated users).
+
+### Protected Routes
+- `/places/new`: Form to create a new place (accessible only to authenticated users).
+- `/places/:pid`: Form to update an existing place (accessible only to authenticated users).
