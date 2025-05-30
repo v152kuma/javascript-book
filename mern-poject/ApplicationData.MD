@@ -42,3 +42,20 @@
 ### Protected Routes
 - `/places/new`: Form to create a new place (accessible only to authenticated users).
 - `/places/:pid`: Form to update an existing place (accessible only to authenticated users).
+
+## Something to be aware abour
+
+    If, when running the newly created React project, you get a "digital envelope routines unsupported" error, this should be caused by your Node version.
+
+    In such cases it will help to replace (in package.json) ...
+
+    "start": "react-scripts start" 
+    ... with ...
+
+    "start": "react-scripts --openssl-legacy-provider start"
+    ... and ...
+
+    "build": "react-scripts build" 
+    ... with ...
+
+    "build": "react-scripts --openssl-legacy-provider build"
