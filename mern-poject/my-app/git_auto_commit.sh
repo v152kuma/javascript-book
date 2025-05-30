@@ -16,7 +16,7 @@ function Git-Auto-Commit-Push() {
     $randomMessage = Get-Random -InputObject $messages
     git add .
     git commit -m "$randomMessage"
-    //find out the current branch name and create upstream if it does not exist
+
     $branchName = git rev-parse --abbrev-ref HEAD
     if (-not (git branch --list "origin/$branchName")) {
         git push --set-upstream origin $branchName
