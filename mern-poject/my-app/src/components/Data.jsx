@@ -24,8 +24,7 @@ const Data = () => {
         fetchTodos();
 
     }, []); 
-
-    console.log(todos);
+    /* Define the columns for the DataGrid */
 
     const columnns = [
         { field: 'id', headerName: 'ID', width: 90 },
