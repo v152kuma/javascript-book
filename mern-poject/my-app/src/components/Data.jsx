@@ -27,6 +27,12 @@ const Data = () => {
 
     console.log(todos);
 
+    const columnns = [
+        { field: 'id', headerName: 'ID', width: 90 },
+        { field: 'todo', headerName: 'Todo', width: 150 },
+        { field: 'completed', headerName: 'Completed', width: 120 },
+        { field: 'userId', headerName: 'User ID', width: 120 }
+    ];
     return (
         <Card sx={{padding: 5}}>
             {/* Render your todos here */}
@@ -34,15 +40,10 @@ const Data = () => {
             <DataGrid 
                 loading={false}
                 rows={todos} 
-                columns={[
-                    { field: 'id', headerName: 'ID', width: 90 },
-                    { field: 'todo', headerName: 'Todo', width: 150 },
-                    { field: 'completed', headerName: 'Completed', width: 120 },
-                    { field: 'userId', headerName: 'User ID', width: 120 }
-                ]}
+                columns={columnns}
                 pageSize={5}
                 rowsPerPageOptions={[5]}
-                checkboxSelection
+                
             />
         </Card>
     )
