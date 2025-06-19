@@ -1,8 +1,10 @@
-import { Card, CardHeader } from '@mui/material';
+import { Card, CardHeader, Toolbar } from '@mui/material';
 import React from 'react';
 import { useEffect } from "react";
 import { useState } from "react";
 import { DataGrid } from '@mui/x-data-grid';
+import DataGridToolBar from './DataGridToolBar';
+
 
 import AssignmentTurnedInRoundedIcon from '@mui/icons-material/AssignmentTurnedInRounded';
 import AssignmentLateRoundedIcon from '@mui/icons-material/AssignmentLateRounded';
@@ -36,19 +38,21 @@ const Data = () => {
                 </a>
             )
         },
+        { field: 'userId', headerName: 'User ID', width: 120 },
         { field: 'todo', headerName: 'Todo', width: 150 },
         { field: 'completed', headerName: 'Completed', width: 120,
             renderCell: (params) => (
                 params.value ? (<AssignmentTurnedInRoundedIcon color="success" />) : (<AssignmentLateRoundedIcon color="error" />)
             )
-         },
-        { field: 'userId', headerName: 'User ID', width: 120 }
+         }
+        
     ];
     return (
         <Card sx={{ padding: 5 }}>
             {/* Render your todos here */}
             <CardHeader title="Todos List" />
             <DataGrid
+                showToolbar
                 loading={false}
                 rows={todos}
                 columns={columnns}
